@@ -1,0 +1,476 @@
+.textbox-styler {
+    margin: 20px auto;
+    height: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+
+    .error-message {
+        color: #f14646;
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+        font-weight: bold;
+        text-align: center;
+      }
+
+
+    h1 {
+        text-align: center;
+    }
+
+    .controls {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        label {
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            text-align: center;
+        }
+
+        input,
+        select {
+            padding: 5px;
+            font-size: 1rem;
+            margin: 0px auto;
+            width: 90%;
+            height: 40px;
+        }
+    }
+
+    .textbox__header {
+        border-radius: 1.5em 1.5em 0 0 !important;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .textbox,
+    .textbox p {
+        hyphens: none;
+        border-radius: 1.5em !important;
+    }
+
+    div.sidebar {
+        background-color: #eee;
+    }
+
+    .textbox ul,
+    .bcc-box ul {
+        margin-top: 1em;
+        margin-bottom: 0.75em;
+    }
+
+    .textbox ol,
+    .bcc-box ol {
+        margin-top: 1em;
+        margin-bottom: 0.75em;
+    }
+
+    .textbox li,
+    .bcc-box li {
+        margin-left: 0.75em;
+        font-size: 0.4rem;
+    }
+
+    .textbox p,
+    .bcc-box p {
+        margin-bottom: 0.5em;
+        text-align: left;
+        text-indent: 0;
+    }
+
+    .textbox *+p,
+    .bcc-box *+p {
+        margin-top: 0;
+        text-indent: 0;
+    }
+
+    .textbox .textbox-caption,
+    .bcc-box .textbox-caption {
+        display: block;
+        margin: 0;
+        font-family: "Raleway", sans-serif;
+        font-size: 0.875em;
+        font-style: normal;
+        font-weight: bold;
+    }
+
+    .textbox.learning-objectives,
+    .bcc-box.learning-objectives {
+        padding: 1.7777777778em 1.7777777778em 1.7777777778em 1.7777777778em;
+        margin-bottom: 1.35em;
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 0;
+        border-style: none;
+        border-width: 0;
+        color: #000;
+        background: #efefef;
+    }
+
+    .textbox.learning-objectives h3,
+    .bcc-box.learning-objectives h3 {
+        padding: 1.4814814815em 1.4814814815em 1.4814814815em 1.4814814815em;
+        margin: -1.4814814815em -1.4814814815em 1.4814814815em -1.4814814815em;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+        font-size: 1.2rem;
+        font-style: none;
+        font-weight: bold;
+        color: #fff;
+        background: #035f68;
+        text-align: left;
+    }
+
+    .textbox.textbox--learning-objectives,
+    .bcc-box.textbox--learning-objectives {
+        margin-bottom: 1.35em;
+        padding: 0;
+        border-radius: 0;
+        border-style: none;
+        border-width: 0;
+        color: #000;
+        background: #efefef;
+    }
+
+    .textbox.textbox--learning-objectives .textbox__header,
+    .bcc-box.textbox--learning-objectives .textbox__header {
+        background: #035f68;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        color: #fff;
+        font-size: 0.9em;
+        font-style: none;
+        font-weight: bold;
+        margin: 0;
+        padding: 1.7777777778em 1.7777777778em 1.7777777778em 1.7777777778em;
+        text-align: left;
+    }
+
+    .textbox.textbox--learning-objectives .textbox__header h1,
+    .textbox.textbox--learning-objectives .textbox__header h2,
+    .textbox.textbox--learning-objectives .textbox__header h3,
+    .textbox.textbox--learning-objectives .textbox__header h4,
+    .textbox.textbox--learning-objectives .textbox__header h5,
+    .textbox.textbox--learning-objectives .textbox__header h6,
+    .bcc-box.textbox--learning-objectives .textbox__header h1,
+    .bcc-box.textbox--learning-objectives .textbox__header h2,
+    .bcc-box.textbox--learning-objectives .textbox__header h3,
+    .bcc-box.textbox--learning-objectives .textbox__header h4,
+    .bcc-box.textbox--learning-objectives .textbox__header h5,
+    .bcc-box.textbox--learning-objectives .textbox__header h6 {
+        color: #fff;
+    }
+
+    .textbox.textbox--learning-objectives .textbox__header p,
+    .bcc-box.textbox--learning-objectives .textbox__header p {
+        text-indent: 0;
+    }
+
+    .textbox.textbox--learning-objectives .textbox__content,
+    .bcc-box.textbox--learning-objectives .textbox__content {
+        margin: 0;
+        padding: 1.7777777778em 1.7777777778em 1.7777777778em 1.7777777778em;
+    }
+
+    .textbox.key-takeaways,
+    .bcc-box.key-takeaways {
+        padding: 1.7777777778em 1.7777777778em 1.7777777778em 1.7777777778em;
+        margin-bottom: 1.35em;
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 0;
+        border-style: none;
+        border-width: 0;
+        color: #000;
+        background: #efefef;
+    }
+
+    .textbox.key-takeaways h3,
+    .bcc-box.key-takeaways h3 {
+        padding: 1.4814814815em 1.4814814815em 1.4814814815em 1.4814814815em;
+        margin: -1.4814814815em -1.4814814815em 1.4814814815em -1.4814814815em;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+        font-size: 1.2rem;
+        font-style: none;
+        font-weight: bold;
+        color: #fff;
+        background: #4f6555;
+        text-align: left;
+    }
+
+    .textbox.textbox--key-takeaways,
+    .bcc-box.textbox--key-takeaways {
+        margin-bottom: 1.35em;
+        padding: 0;
+        border-radius: 0;
+        border-style: none;
+        border-width: 0;
+        color: #000;
+        background: #efefef;
+    }
+
+    .textbox.textbox--key-takeaways .textbox__header,
+    .bcc-box.textbox--key-takeaways .textbox__header {
+        background: #4f6555;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        color: #fff;
+        font-size: 0.9em;
+        font-style: none;
+        font-weight: bold;
+        margin: 0;
+        padding: 1.7777777778em 1.7777777778em 1.7777777778em 1.7777777778em;
+        text-align: left;
+    }
+
+    .textbox.textbox--key-takeaways .textbox__header h1,
+    .textbox.textbox--key-takeaways .textbox__header h2,
+    .textbox.textbox--key-takeaways .textbox__header h3,
+    .textbox.textbox--key-takeaways .textbox__header h4,
+    .textbox.textbox--key-takeaways .textbox__header h5,
+    .textbox.textbox--key-takeaways .textbox__header h6,
+    .bcc-box.textbox--key-takeaways .textbox__header h1,
+    .bcc-box.textbox--key-takeaways .textbox__header h2,
+    .bcc-box.textbox--key-takeaways .textbox__header h3,
+    .bcc-box.textbox--key-takeaways .textbox__header h4,
+    .bcc-box.textbox--key-takeaways .textbox__header h5,
+    .bcc-box.textbox--key-takeaways .textbox__header h6 {
+        color: #fff;
+    }
+
+    .textbox.textbox--key-takeaways .textbox__header p,
+    .bcc-box.textbox--key-takeaways .textbox__header p {
+        text-indent: 0;
+    }
+
+    .textbox.textbox--key-takeaways .textbox__content,
+    .bcc-box.textbox--key-takeaways .textbox__content {
+        margin: 0;
+        padding: 1.7777777778em 1.7777777778em 1.7777777778em 1.7777777778em;
+    }
+
+    .textbox.exercises,
+    .bcc-box.exercises {
+        padding: 1.7777777778em 1.7777777778em 1.7777777778em 1.7777777778em;
+        margin-bottom: 1.35em;
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 0;
+        border-style: none;
+        border-width: 0;
+        color: #000;
+        background: #efefef;
+    }
+
+    .textbox.exercises h3,
+    .bcc-box.exercises h3 {
+        padding: 1.4814814815em 1.4814814815em 1.4814814815em 1.4814814815em;
+        margin: -1.4814814815em -1.4814814815em 1.4814814815em -1.4814814815em;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+        font-size: 1.2rem;
+        font-style: none;
+        font-weight: bold;
+        color: #fff;
+        background: #037e9b;
+        text-align: left;
+    }
+
+    .textbox.textbox--exercises,
+    .bcc-box.textbox--exercises {
+        margin-bottom: 1.35em;
+        padding: 0;
+        border-radius: 0;
+        border-style: none;
+        border-width: 0;
+        color: #000;
+        background: #efefef;
+    }
+
+    .textbox.textbox--exercises .textbox__header,
+    .bcc-box.textbox--exercises .textbox__header {
+        background: #037e9b;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        color: #fff;
+        font-size: 0.9em;
+        font-style: none;
+        font-weight: bold;
+        margin: 0;
+        padding: 1.7777777778em 1.7777777778em 1.7777777778em 1.7777777778em;
+        text-align: left;
+    }
+
+    .textbox.textbox--exercises .textbox__header h1,
+    .textbox.textbox--exercises .textbox__header h2,
+    .textbox.textbox--exercises .textbox__header h3,
+    .textbox.textbox--exercises .textbox__header h4,
+    .textbox.textbox--exercises .textbox__header h5,
+    .textbox.textbox--exercises .textbox__header h6,
+    .bcc-box.textbox--exercises .textbox__header h1,
+    .bcc-box.textbox--exercises .textbox__header h2,
+    .bcc-box.textbox--exercises .textbox__header h3,
+    .bcc-box.textbox--exercises .textbox__header h4,
+    .bcc-box.textbox--exercises .textbox__header h5,
+    .bcc-box.textbox--exercises .textbox__header h6 {
+        color: #fff;
+    }
+
+    .textbox.textbox--exercises .textbox__header p,
+    .bcc-box.textbox--exercises .textbox__header p {
+        text-indent: 0;
+    }
+
+    .textbox.textbox--exercises .textbox__content,
+    .bcc-box.textbox--exercises .textbox__content {
+        margin: 0;
+        padding: 1.7777777778em 1.7777777778em 1.7777777778em 1.7777777778em;
+    }
+
+    .textbox.examples,
+    .bcc-box.examples {
+        padding: 1.7777777778em 1.7777777778em 1.7777777778em 1.7777777778em;
+        margin-bottom: 1.35em;
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 0;
+        border-style: none;
+        border-width: 0;
+        color: #000;
+        background: #efefef;
+    }
+
+    .textbox.examples h3,
+    .bcc-box.examples h3 {
+        padding: 1.4814814815em 1.4814814815em 1.4814814815em 1.4814814815em;
+        margin: -1.4814814815em -1.4814814815em 1.4814814815em -1.4814814815em;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+        font-size: 1.2rem;
+        font-style: none;
+        font-weight: bold;
+        color: #fff;
+        background: #0c8b91;
+        text-align: left;
+    }
+
+    .textbox.textbox--examples,
+    .bcc-box.textbox--examples {
+        margin-bottom: 1.35em;
+        padding: 0;
+        border-radius: 0;
+        border-style: none;
+        border-width: 0;
+        color: #000;
+        background: #efefef;
+    }
+
+    .textbox.textbox--examples .textbox__header,
+    .bcc-box.textbox--examples .textbox__header {
+        background: #0c8b91;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        color: #fff;
+        font-size: 0.9em;
+        font-style: none;
+        font-weight: bold;
+        margin: 0;
+        padding: 1.7777777778em 1.7777777778em 1.7777777778em 1.7777777778em;
+        text-align: left;
+    }
+
+    .textbox.textbox--examples .textbox__header h1,
+    .textbox.textbox--examples .textbox__header h2,
+    .textbox.textbox--examples .textbox__header h3,
+    .textbox.textbox--examples .textbox__header h4,
+    .textbox.textbox--examples .textbox__header h5,
+    .textbox.textbox--examples .textbox__header h6,
+    .bcc-box.textbox--examples .textbox__header h1,
+    .bcc-box.textbox--examples .textbox__header h2,
+    .bcc-box.textbox--examples .textbox__header h3,
+    .bcc-box.textbox--examples .textbox__header h4,
+    .bcc-box.textbox--examples .textbox__header h5,
+    .bcc-box.textbox--examples .textbox__header h6 {
+        color: #fff;
+    }
+
+    .textbox.textbox--examples .textbox__header p,
+    .bcc-box.textbox--examples .textbox__header p {
+        text-indent: 0;
+    }
+
+    .textbox.textbox--examples .textbox__content,
+    .bcc-box.textbox--examples .textbox__content {
+        margin: 0;
+        padding: 1.7777777778em 1.7777777778em 1.7777777778em 1.7777777778em;
+    }
+
+    .textbox--sidebar {
+        float: right;
+        margin: 1em 0 1em 1em;
+        max-width: 30%;
+    }
+
+    .sidebar {
+        margin-bottom: 1em;
+    }
+
+    .sidebar ul,
+    .sidebar ol {
+        padding-left: 1em;
+        font-size: 1em;
+    }
+
+    div.textbox p,
+    div.textbox ul,
+    div.textbox ol {
+        font-size: 1rem;
+    }
+
+    div.textbox--sidebar ul {
+        padding-left: 1em;
+    }
+
+    div.textbox--sidebar.textbox--examples,
+    div.textbox--sidebar.textbox--key-takeaways,
+    div.textbox--sidebar.textbox--exercises,
+    div.textbox--sidebar.textbox--learning-objectives {
+        width: 40%;
+        max-width: 40%;
+        padding: 0.2em;
+    }
+
+    div.textbox--sidebar.textbox--examples .textbox__header,
+    div.textbox--sidebar.textbox--key-takeaways .textbox__header,
+    div.textbox--sidebar.textbox--exercises .textbox__header,
+    div.textbox--sidebar.textbox--learning-objectives .textbox__header {
+        padding: 1em;
+        border-bottom: none;
+    }
+
+    div.textbox--sidebar.textbox--examples .textbox__header p,
+    div.textbox--sidebar.textbox--key-takeaways .textbox__header p,
+    div.textbox--sidebar.textbox--exercises .textbox__header p,
+    div.textbox--sidebar.textbox--learning-objectives .textbox__header p {
+        font-family: "Raleway", sans-serif;
+        font-weight: 500;
+    }
+
+    div.textbox--sidebar.textbox--examples .textbox__header>header.textbox__header,
+    div.textbox--sidebar.textbox--examples .textbox__header>div.textbox__content,
+    div.textbox--sidebar.textbox--key-takeaways .textbox__header>header.textbox__header,
+    div.textbox--sidebar.textbox--key-takeaways .textbox__header>div.textbox__content,
+    div.textbox--sidebar.textbox--exercises .textbox__header>header.textbox__header,
+    div.textbox--sidebar.textbox--exercises .textbox__header>div.textbox__content,
+    div.textbox--sidebar.textbox--learning-objectives .textbox__header>header.textbox__header,
+    div.textbox--sidebar.textbox--learning-objectives .textbox__header>div.textbox__content {
+        padding: 1em;
+    }
+}
