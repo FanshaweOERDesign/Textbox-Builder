@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 body {
   font-family: "Montserrat", serif;
@@ -6,19 +6,20 @@ body {
   margin: 20px auto;
   padding: 0;
   background: linear-gradient(to left, rgb(238, 81, 81), rgb(138, 138, 240));
+  background-repeat: no-repeat;
   color: rgb(63, 63, 63);
   min-height: 100vh;
 }
 
 .textbox-styler {
-  width: 100%;
-  max-width: 800px;
-  min-width: 400px;
+  width: 90%;
   margin: 50px auto;
   padding: 1rem;
+  box-sizing: border-box;
   background: #fff;
   border-radius: 1em;
   box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+  min-width: 260px;
 
   .controls {
     display: flex;
@@ -53,7 +54,6 @@ body {
       appearance: none;
       background-color: #fff;
       cursor: pointer;
-
       &::-ms-expand {
         display: none;
       }
@@ -67,27 +67,6 @@ body {
 
       &::placeholder {
         color: #aaa;
-      }
-    }
-
-    input[type="color"] {
-      padding: 0.2rem;
-      border: none;
-      background: none;
-      cursor: pointer;
-
-      &::-webkit-color-swatch {
-        border: 1px solid #ccc;
-        border-radius: 4px;
-      }
-
-      &::-webkit-color-swatch-wrapper {
-        padding: 0;
-      }
-
-      &:focus {
-        outline: none;
-        border: 2px solid #0078d4;
       }
     }
   }
@@ -126,7 +105,7 @@ body {
     }
 
     textarea {
-      width: 90%;
+      width: 100%;
       background: #f4f4f4;
       border: 1px solid #ccc;
       border-radius: 4px;
@@ -138,5 +117,36 @@ body {
       resize: none;
       box-sizing: border-box;
     }
+  }
+}
+
+// Responsive Styles
+@media (max-width: 768px) {
+  .textbox-styler {
+    width: 95%;
+    margin: 30px auto;
+    padding: 0.75rem;
+  }
+
+  .controls {
+    gap: 0.75rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .textbox-styler {
+    width: 100%;
+    min-width: unset;
+    padding: 0.5rem;
+  }
+
+  button {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
   }
 }

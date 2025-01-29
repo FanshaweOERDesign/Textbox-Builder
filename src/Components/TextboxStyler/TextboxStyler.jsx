@@ -201,7 +201,9 @@ const TextboxStyler = () => {
           </>
         )}
 
-        <button onClick={handleExportSCSS}>Generate SCSS</button>
+        <button className="generate-btn" onClick={handleExportSCSS}>
+          Generate SCSS
+        </button>
         {error && <p className="error-message">{error}</p>}
       </div>
 
@@ -218,33 +220,35 @@ const TextboxStyler = () => {
       )}
 
       <div className="preview">
-        <h2>Preview</h2>
-        <div className={`textbox-preview textbox textbox--${textboxType}`}>
-          <header
-            className="textbox__header"
-            style={{
-              backgroundImage:
-                backgroundType === "image"
-                  ? `url(${imageUrl})`
-                  : backgroundType === "gradient"
-                  ? `linear-gradient(${gradientDirection}, ${gradientColors[0]}, ${gradientColors[1]})`
-                  : backgroundType === "both"
-                  ? `url(${imageUrl}), linear-gradient(${gradientDirection}, ${gradientColors[0]}, ${gradientColors[1]})`
-                  : "none",
-              backgroundColor:
-                backgroundType === "image" || backgroundType === "both"
-                  ? solidBackgroundColor
-                  : backgroundType === "gradient"
-                  ? "transparent"
-                  : solidBackgroundColor,
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-            }}
-          >
-            <h2>{title}</h2>
-          </header>
-          <div className="textbox__content">{content}</div>
+        <h2 className="preview-header">Preview</h2>
+        <div className="preview-content">
+          <div className={`textbox-preview textbox textbox--${textboxType}`}>
+            <header
+              className="textbox__header"
+              style={{
+                backgroundImage:
+                  backgroundType === "image"
+                    ? `url(${imageUrl})`
+                    : backgroundType === "gradient"
+                    ? `linear-gradient(${gradientDirection}, ${gradientColors[0]}, ${gradientColors[1]})`
+                    : backgroundType === "both"
+                    ? `url(${imageUrl}), linear-gradient(${gradientDirection}, ${gradientColors[0]}, ${gradientColors[1]})`
+                    : "none",
+                backgroundColor:
+                  backgroundType === "image" || backgroundType === "both"
+                    ? solidBackgroundColor
+                    : backgroundType === "gradient"
+                    ? "transparent"
+                    : solidBackgroundColor,
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+              }}
+            >
+              <h2>{title}</h2>
+            </header>
+            <div className="textbox__content">{content}</div>
+          </div>
         </div>
       </div>
     </div>
