@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Textbox-Builder/static/css/main.42cbcd39.css",
+    "main.css": "/Textbox-Builder/static/css/main.f05d7c3b.css",
     "main.js": "/Textbox-Builder/static/js/main.b17e33ca.js",
     "index.html": "/Textbox-Builder/index.html",
-    "main.42cbcd39.css.map": "/Textbox-Builder/static/css/main.42cbcd39.css.map",
+    "main.f05d7c3b.css.map": "/Textbox-Builder/static/css/main.f05d7c3b.css.map",
     "main.b17e33ca.js.map": "/Textbox-Builder/static/js/main.b17e33ca.js.map"
   },
   "entrypoints": [
-    "static/css/main.42cbcd39.css",
+    "static/css/main.f05d7c3b.css",
     "static/js/main.b17e33ca.js"
   ]
 }
