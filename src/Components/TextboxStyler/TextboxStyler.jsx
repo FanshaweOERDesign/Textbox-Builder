@@ -10,9 +10,10 @@ import { generateSCSS, isValidUrl } from "../../Utils/Utils";
 import "./TextboxStyler.scss";
 
 const TextboxStyler = () => {
-  const [backgroundType, setBackgroundType] = useState("image");
+  const [backgroundType, setBackgroundType] = useState("solid");
   const [imageUrl, setImageUrl] = useState("");
-  const [solidBackgroundColor, setSolidBackgroundColor] = useState("#ffffff");
+  const [solidBackgroundColor, setSolidBackgroundColor] = useState("#035f68");
+  const [headerTextColor, setHeaderTextColor] = useState("#ffffff");
   const [gradientDirection, setGradientDirection] = useState("to right");
   const [gradientColors, setGradientColors] = useState(["#b3272d", "#646469"]);
   const [title, setTitle] = useState("Custom Textbox");
@@ -22,6 +23,9 @@ const TextboxStyler = () => {
   const [textboxType, setTextboxType] = useState("examples");
   const [generatedSCSS, setGeneratedSCSS] = useState("");
   const [error, setError] = useState("");
+  const [bodyBackgroundColor, setBodyBackgroundColor] = useState("#efefef");
+  const [bodyTextColor, setBodyTextColor] = useState("#373d3f");
+  const [border, setBorder] = useState(null);
 
   const defaultSolidColors = useMemo(
     () => ({
@@ -65,7 +69,11 @@ const TextboxStyler = () => {
         imageUrl,
         solidBackgroundColor,
         gradientDirection,
-        gradientColors
+        gradientColors,
+        headerTextColor,
+        bodyBackgroundColor,
+        bodyTextColor,
+        border
       )
     );
   };
@@ -84,7 +92,7 @@ const TextboxStyler = () => {
   };
 
   useEffect(() => {
-    if (backgroundType === "image") {
+    if (["image", "solid"].includes(backgroundType)) {
       setSolidBackgroundColor(defaultSolidColors[textboxType]);
     }
   }, [textboxType, backgroundType, defaultSolidColors]);
@@ -128,11 +136,12 @@ const TextboxStyler = () => {
         </label>
 
         <label>
-          Background Type:
+          Header Background Type:
           <select
             value={backgroundType}
             onChange={handleInputChange(setBackgroundType)}
           >
+            <option value="solid">Solid Color</option>
             <option value="image">Image</option>
             <option value="gradient">Gradient</option>
             <option value="both">Image & Gradient</option>
@@ -150,16 +159,16 @@ const TextboxStyler = () => {
                 placeholder="Enter image URL"
               />
             </label>
-            <label>
-              Solid Background Color:
+          </>
+        )}
+        {["image", "solid"].includes(backgroundType) && <label>
+              Solid Header Background Color:
               <input
                 type="color"
                 value={solidBackgroundColor}
                 onChange={handleInputChange(setSolidBackgroundColor)}
               />
-            </label>
-          </>
-        )}
+            </label>}
 
         {["gradient", "both"].includes(backgroundType) && (
           <>
@@ -200,13 +209,58 @@ const TextboxStyler = () => {
             </label>
           </>
         )}
+        <label>
+          Header Text Color:
+          <input
+            type="color"
+            value={headerTextColor}
+            onChange={handleInputChange(setHeaderTextColor)}
+            placeholder="Header text color"
+          />
+        </label>
+        <label>
+          Body Background Color:
+          <input
+            type="color"
+            value={bodyBackgroundColor}
+            onChange={handleInputChange(setBodyBackgroundColor)}
+          />
+        </label>
+        <label>
+          Body Text Color:
+          <input
+            type="color"
+            value={bodyTextColor}
+            onChange={handleInputChange(setBodyTextColor)}
+          />
+        </label>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <input
+          type="checkbox"
+          style={{ margin: 0, width: "10%" }}
+          checked={border !== null}
+          onChange={(e) => setBorder(e.target.checked ? "#000" : null)}
+        />
+        <label>Border?</label>
+        </div>
+        {border && (
+          <label>
+            Border Color:
+            <input
+              type="color"
+              value={border}
+              onChange={(e) => setBorder(e.target.value)}
+            />
+          </label>
+        )}
 
         <button onClick={handleExportSCSS}>Generate SCSS</button>
         {error && <p className="error-message">{error}</p>}
       </div>
 
       {generatedSCSS && (
-        <div className="scss-output">
+        <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+        <div className="scss-output" style={{ width: "100%", maxWidth: "800px" }}>
           <h2>Generated SCSS</h2>
           <textarea
             value={generatedSCSS}
@@ -215,11 +269,17 @@ const TextboxStyler = () => {
             style={{ width: "100%", fontFamily: "monospace", fontSize: "1rem" }}
           />
         </div>
+        <button
+          onClick={() => {
+            navigator.clipboard.writeText(generatedSCSS);
+            alert("SCSS copied to clipboard!");
+          }}  > Copy </button>
+        </div>
       )}
 
       <div className="preview">
         <h2>Preview</h2>
-        <div className={`textbox-preview textbox textbox--${textboxType}`}>
+        <div className={`textbox-preview textbox textbox--${textboxType}`} style={{border: border ? `1px solid ${border}` : "none"}}>
           <header
             className="textbox__header"
             style={{
@@ -242,9 +302,9 @@ const TextboxStyler = () => {
               backgroundPosition: "center",
             }}
           >
-            <h2>{title}</h2>
+            <h2 style={{color: headerTextColor}}>{title}</h2>
           </header>
-          <div className="textbox__content">{content}</div>
+          <div className="textbox__content" style={{backgroundColor: bodyBackgroundColor, borderRadius: "8px", color: bodyTextColor}}>{content}</div>
         </div>
       </div>
     </div>

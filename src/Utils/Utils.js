@@ -12,7 +12,11 @@ export const generateSCSS = (
   imageUrl,
   solidBackgroundColor,
   gradientDirection,
-  gradientColors
+  gradientColors,
+  headerTextColor,
+  bodyBackgroundColor,
+  bodyTextColor,
+  border = "none"
 ) => {
   let backgroundStyle = "";
 
@@ -33,6 +37,26 @@ export const generateSCSS = (
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.textbox.textbox--${textboxType} .textbox__header > *,
+.bcc-box.textbox--${textboxType} .textbox__header > * {
+  color: ${headerTextColor} !important;
+}
+
+
+.textbox.textbox--${textboxType} .textbox__content,
+.bcc-box.textbox--${textboxType} .textbox__content {
+  background-color: ${bodyBackgroundColor};
+  padding: 20px;
+  border-radius: 0 0 1.5em 1.5em;
+  color: ${bodyTextColor};
+}
+
+.textbox.textbox--${textboxType} {
+  border: 1px solid ${border};
+  padding-bottom: 0.5em;
+  background-color: ${bodyBackgroundColor};
 }
 `;
 };
