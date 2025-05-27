@@ -1,10 +1,4 @@
 .textbox-styler {
-    margin: 20px auto;
-    height: 90%;
-    max-width: 1000px;
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
-
     .error-message {
         color: #f14646;
         font-size: 0.9rem;
@@ -19,28 +13,39 @@
     }
 
     .controls {
-        margin-bottom: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-
         label {
-            font-weight: bold;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
             text-align: center;
+            font-size: 1.2em;
         }
 
         input,
         select {
-            padding: 5px;
-            font-size: 1rem;
-            margin: 0px auto;
             width: 90%;
-            height: 40px;
+            margin: 0px auto;
+            min-height: 50px;
         }
     }
+
+    .generate-btn {
+        max-width: 200px;
+        margin: 0px auto;
+    }
+
+    .preview {
+        max-width: 40em;     
+        margin: 0px auto;   
+
+        .preview-header {
+            text-align: center;
+        }
+
+        .preview-content {
+         width: 100%;
+        }
+
+    }
+
+    /////Built in Press books styling
 
     .textbox__header {
         border-radius: 1.5em 1.5em 0 0 !important;
